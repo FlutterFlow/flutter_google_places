@@ -4,16 +4,21 @@ version: 0.4.0
 repository: https://github.com/fluttercommunity/flutter_google_places
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=2.12.0 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  google_api_headers: ^1.3.0
-  google_maps_webservice: ^0.0.20-nullsafety.5
-  http: ^0.13.4
-  rxdart: ^0.27.5
+  google_api_headers: ">=4.5.3 <6.0.0"
+  # Same sources as the published 0.0.20-nullsafety.5 with the http constraint
+  # relaxed. Pinned to a commit so the resolved code cannot change.
+  google_maps_webservice:
+    git:
+      url: https://github.com/ShehanYjoz/google_maps_webservice.git
+      ref: 1588c27229ab48665635acb65c090d6a658da6fc
+  http: ">=0.13.4 <2.0.0"
+  rxdart: ">=0.27.7 <0.29.0"
 
 dev_dependencies:
   flutter_test:
